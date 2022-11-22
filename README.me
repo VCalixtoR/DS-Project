@@ -7,12 +7,15 @@ Dependencies:
 
 	Install mosquitto MQTT broker - https://mosquitto.org/download/
 
+	Install mysql server - https://dev.mysql.com/downloads/mysql/
+
 	Install python 3.10.2 - https://www.python.org/downloads/
 
 	Install python dependencies:
 		python -m pip install --upgrade pip
 		pip install configparser - https://pypi.org/project/configparser/
 		pip install paho-mqtt - https://pypi.org/project/paho-mqtt/
+		pip install mysql-connector-python - https://pypi.org/project/mysql-connector-python/
 
 
 		the next 2 should be installed by default and will cause instalation only errors if already installed:
@@ -29,14 +32,18 @@ Configuration:
 			▄ - U+2584 Lower Half Block
 
 	In config.ini, to change config variables:
-		[mqtt_connection]
+
+	[mqtt]
 		host - MQTT broker host used
 		port - MQTT broker port used
 
-		[screen]
-		line_size - how many characters per line
-		indent_n - indent size
+	[admin_socket]
+		ipv4 - host Socket adress
 
+	[screen]
+		line_size = how many characters per line
+		indent_n - indent size
+	
 To execute:
 
 	Since the application is divided in 4 parts the app can be started by:

@@ -20,7 +20,11 @@ class ClientSocket:
     self.tcpSocketCli = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     self.printLogMessage('Trying connection to server ' + defIpv4 + ':' + str(socketPort))
-    self.tcpSocketCli.connect((defIpv4, socketPort))
+    try:
+      self.tcpSocketCli.connect((defIpv4, socketPort))
+    except:
+      self.printLogMessage('Connection to server failed please make sure that server is started')
+      exit()
     self.printLogMessage('Connection to server done')
 
   def printLogMessage(self, message):

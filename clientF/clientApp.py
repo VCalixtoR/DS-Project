@@ -130,8 +130,10 @@ def enumerateOrdersScr():
   respType, respArgs = enumerateOrders(cid)
 
   if respType == 'Success':
-    orderProductsAr = (json.loads(respArgs['str_order_products']))['order_products']
-    screenMountReturnNextStep(respType, 'OID: ' + respArgs['oid'], arrayDictData=orderProductsAr )
+    orderProductsAr = json.loads(respArgs['str_orders_enum'])
+    orderProductsAr = orderProductsAr['orders_enum']
+    
+    screenMountReturnNextStep(respType, respArgs['message'], arrayDictData=orderProductsAr )
   else:
     screenMountReturnNextStep(respType, respArgs['message'])
 

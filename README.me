@@ -1,0 +1,38 @@
+Welcome to DA project! 😊
+
+This is an Distributted Application using MQTT protocol and socket with tcp for communication
+For more information see: https://paulo-coelho.github.io/ds_notes/projeto/
+
+Dependencies:
+
+	Install mosquitto MQTT broker - https://mosquitto.org/download/
+
+	Install python 3.10.2 - https://www.python.org/downloads/
+
+	Install python dependencies:
+		python -m pip install --upgrade pip
+		pip install configparser - https://pypi.org/project/configparser/
+		pip install paho-mqtt - https://pypi.org/project/paho-mqtt/
+
+
+		the next 2 should be installed by default and will cause instalation only errors if already installed:
+			pip install hashlib - https://pypi.org/project/hashlib/
+			pip install hmac - https://pypi.org/project/hmac/:
+
+Configuration:
+
+	Since this app executes in shell with a characters box:
+		set the terminal font type to a monospace one
+		the characters box is wrapped by unicode charactes, verify if your shell recognizes:
+			█ - U+2588 Full Block
+			▀ - U+2580 Upper Half Block
+			▄ - U+2584 Lower Half Block
+
+	In config.ini, to change config variables:
+		[mqtt_connection]
+		host - MQTT broker host used
+		port - MQTT broker port used
+
+		[screen]
+		line_size - how many characters per line
+		indent_n - indent size

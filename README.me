@@ -41,3 +41,8 @@ To execute:
 
 	Since the application is divided in 4 parts the app can be started by:
 		by using start.bat with will create all the 4 process
+		.\start.bat
+		opening a single one by time, make sure that you start portal first and its app after to stablish socket connections
+		python .\start.py -app 2 -socketPort 8001
+	
+	The App suports multiples processes but make sure that socketPort used are not the same
